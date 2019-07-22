@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "iOSSnapshotTestCase"
-  s.module_name  = "FBSnapshotTestCase"
+  s.module_name  = "iOSSnapshotTestCase"
   s.version      = "6.1.0"
   s.summary      = "Snapshot view unit tests for iOS"
   s.description  = <<-DESC
@@ -24,12 +24,12 @@ Pod::Spec.new do |s|
   s.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(PLATFORM_DIR)/Developer/Library/Frameworks' }
   s.default_subspecs = 'SwiftSupport'
   s.subspec 'Core' do |cs|
-    cs.source_files = 'FBSnapshotTestCase/**/*.{h,m}', 'FBSnapshotTestCase/*.{h,m}'
-    cs.public_header_files = 'FBSnapshotTestCase/FBSnapshotTestCase.h','FBSnapshotTestCase/FBSnapshotTestCasePlatform.h','FBSnapshotTestCase/FBSnapshotTestController.h'
-    cs.private_header_files = 'FBSnapshotTestCase/Categories/UIImage+Compare.h','FBSnapshotTestCase/Categories/UIImage+Diff.h','FBSnapshotTestCase/Categories/UIImage+Snapshot.h'
+    cs.source_files = 'iOSSnapshotTestCase/**/*.{h,m}', 'iOSSnapshotTestCase/*.{h,m}'
+    cs.public_header_files = 'iOSSnapshotTestCase/FBSnapshotTestCase.h','iOSSnapshotTestCase/FBSnapshotTestCasePlatform.h','iOSSnapshotTestCase/FBSnapshotTestController.h'
+    cs.private_header_files = 'iOSSnapshotTestCase/Categories/UIImage+Compare.h','iOSSnapshotTestCase/Categories/UIImage+Diff.h','iOSSnapshotTestCase/Categories/UIImage+Snapshot.h'
   end
   s.subspec 'SwiftSupport' do |cs|
     cs.dependency 'iOSSnapshotTestCase/Core'
-    cs.source_files = 'FBSnapshotTestCase/**/*.swift'
+    cs.source_files = 'iOSSnapshotTestCase/**/*.swift'
   end
 end
